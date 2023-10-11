@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,6 +11,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String? responseBody;
+
+  Future getData(uri) async {
+    var url = Uri.parse(uri); 
+    Response response = await get(url);
+    print(response.body);
+    responseBody = response.body;
+  }
+
+  @override
+  void initState() {
+    getData("http://127.0.0.1:5000");
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,49 +33,18 @@ class _HomePageState extends State<HomePage> {
         child: Center(
           child: Column(
             children: [
-              const Expanded(
+               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Center(
                     child: Text(
-                      'This is where the questions text will go',
+                      responseBody ?? "",
                       textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.amber),
                     ),
                   ),
                 )
               ),
-               SizedBox(
-                width: 500,
-                height: 100,
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: ElevatedButton(
-                    child: const Text(
-                      'False',
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {
-                      
-                    },
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 500,
-                height: 100,
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: ElevatedButton(
-                    child: const Text(
-                      'True',
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {
-                      
-                    },
-                  ),
-                ),
-              )
             ],
           )
         ),
