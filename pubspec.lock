@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
+  envied:
+    dependency: "direct main"
+    description:
+      name: envied
+      sha256: c4af8bb99203d7f216cea41f2ec70874f9dd826b2a5782cdc5bd25389c5adcc1
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.2"
   fake_async:
     dependency: transitive
     description:
@@ -104,6 +112,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  jumping_dot:
+    dependency: "direct main"
+    description:
+      name: jumping_dot
+      sha256: a2f755140da73d018bf5198acd83cdd2898a393e5ea45ee94250b9ba44566d1c
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   lints:
     dependency: transitive
     description:
