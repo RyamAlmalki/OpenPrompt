@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_and_register/model/prompt.dart';
 import 'package:login_and_register/screens/homepage_screen.dart';
-import 'package:login_and_register/services/chatgpt.dart';
 import 'package:login_and_register/shared.dart';
 
 class BotProfileScreen extends StatefulWidget {
@@ -21,28 +20,6 @@ class _BotProfileScreenState extends State<BotProfileScreen> {
   bool isCreated = false;
   dynamic imageUrl;
 
-  creatBot() async {
-    showDialog(
-      context: context, 
-      builder: (context){
-        return const Center(child: CircularProgressIndicator(color: Colors.deepPurpleAccent,));
-      }
-    );
-
-    if(handelForm.text.isNotEmpty && promptForm.text.isNotEmpty){
-      if(handelForm.text.length <= 20){
-
-        String prompt = await ChatGPT().promptGPTAPI(promptForm.text);
-
-        promptPages.add(Prompt(handel: handelForm.text, bio: bioForm.text, prompt: prompt, imageUrl: imageUrl, greeting: greetingForm.text));
-        
-        setState(() {
-          isCreated = true;
-        });
-
-      }
-    }
-  }
 
 
   @override

@@ -83,13 +83,13 @@ class _MessageScreenState extends State<MessageScreen> {
           FocusScope.of(context).requestFocus(FocusNode());
         },
         child: Container(
-          decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25)), 
+          decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25)), 
           color: Colors.black,),
           child: Column(
               //dmainAxisAlignment: MainAxisAlignment.spaceBetween,       
               children: [
                         
-                  SizedBox(height: 50,),
+                  const SizedBox(height: 50,),
                   Expanded(
                     child: Align(
                       alignment: Alignment.topCenter,
@@ -124,7 +124,7 @@ class _MessageScreenState extends State<MessageScreen> {
                         value.isNotEmpty ? setState(() => hasText = true) : setState(() => hasText = false);
                       },
                       controller: textForm,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       cursorColor: Colors.white,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -132,7 +132,7 @@ class _MessageScreenState extends State<MessageScreen> {
                         filled: true,
                         suffixIcon: Padding(
                           padding: const EdgeInsets.only(right: 15),
-                          child: IconButton(icon: Icon(Icons.send_rounded, color: Colors.white,), 
+                          child: IconButton(icon: const Icon(Icons.send_rounded, color: Colors.white,), 
                             onPressed: () async {
                               
                         
@@ -156,9 +156,10 @@ class _MessageScreenState extends State<MessageScreen> {
                               setState(() {
                                 messageInChat.add(Message(type: false, loading: true));
                               });
-                        
-                              var data = await ChatGPT().chatGPTAPI(widget.prompt!.prompt, textForm.text);
-                        
+                              
+                              
+                              var data = await ChatGPT().chatGPTAPI(widget.prompt!.prompt, message);
+                              textForm.clear();
                               
                               setState(() {
                                 messageInChat[messageInChat.length - 1].loading = false;
@@ -169,10 +170,10 @@ class _MessageScreenState extends State<MessageScreen> {
                           )
                         ),
                         hintText: hasText ? null : hintText,
-                        hintStyle: TextStyle(color: Colors.white),
+                        hintStyle: const TextStyle(color: Colors.white),
                     
+                   ),
                   ),
-                                        ),
                 ),
               ]
             )
@@ -222,7 +223,7 @@ class MessageBubble extends StatelessWidget {
               color: isMe? HexColor("#2E2C30"): Colors.deepPurpleAccent,
               borderRadius: BorderRadius.only( topLeft: !isMe ? const Radius.circular(0.0): const Radius.circular(30.0), bottomRight: const Radius.circular(30.0), bottomLeft: const Radius.circular(30.0), topRight:  isMe ? const Radius.circular(0.0): const Radius.circular(30.0)),
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -230,7 +231,7 @@ class MessageBubble extends StatelessWidget {
                        child: JumpingDotsProgressIndicator(fontSize: 40, color: Colors.white,)
                      ):  SelectableText(
                       '${message.text}', 
-                      style:  TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ) ,        
                   ],
                 ),

@@ -10,7 +10,7 @@ InputDecoration decorationStyles = InputDecoration(
     border: InputBorder.none,
     filled: false,
     fillColor:  HexColor("#2E2C30"),
-    labelStyle: TextStyle(color: Colors.white),
+    labelStyle: const TextStyle(color: Colors.white),
     hintStyle: TextStyle(color: Colors.grey.shade700),
     floatingLabelBehavior: FloatingLabelBehavior.never,
     focusedBorder: OutlineInputBorder(

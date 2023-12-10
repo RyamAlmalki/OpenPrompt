@@ -8,5 +8,4 @@ class Prompt{
 
   Prompt({this.handel, this.page, this.bio, this.greeting, this.prompt, this.imageUrl, });
 
-
 }
