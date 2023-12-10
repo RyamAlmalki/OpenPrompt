@@ -3,4 +3,4 @@
 </p>
 
 <h1 align="left">OpenPrompt</h1>
-<p>QuickFly is your go-to solution for booking flights in the fastest and most convenient way possible. Say goodbye to the hassle of navigating through complicated booking processes and let QuickFly take you to your dream destination with ease.</p>
+<p>OpenPrompt provides a flexible and efficient way to create and manage custom prompts. This feature allows you to design, save, and swiftly access your personalized prompts, streamlining your workflow.</p>
