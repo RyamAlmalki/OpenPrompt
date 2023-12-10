@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="1200" src="https://github.com/RyamAlmalki/OpenPrompt/blob/master/readMeStyle/banner.png?raw=true" alt="Material Bread logo">
+    <img width="1200" src="https://github.com/RyamAlmalki/OpenPrompt/blob/master/readMeStyle/openprompt_banner.png?raw=true" alt="Material Bread logo">
 </p>
 
 <h1 align="left">OpenPrompt</h1>
